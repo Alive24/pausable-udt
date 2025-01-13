@@ -1,7 +1,7 @@
 use std::ffi::CStr;
 use std::ffi::CString;
 
-use ckb_ssri_sdk::public_module_traits::udt::UDTPausableData;
+use ckb_ssri_std::public_module_traits::udt::UDTPausableData;
 use ckb_std::ckb_types::packed::Bytes as PackedBytes;
 use ckb_std::ckb_types::packed::BytesBuilder as PackedBytesBuilder;
 use ckb_std::ckb_types::packed::BytesVec;

@@ -9,7 +9,7 @@ use ckb_std::{
     ckb_constants::Source, debug, high_level::load_cell_lock_hash
 };
 
-use ckb_ssri_sdk::public_module_traits::udt::{UDTPausable, UDT};
+use ckb_ssri_std::public_module_traits::udt::{UDTPausable, UDT};
 
 pub fn fallback() -> Result<(), Error> {
     debug!("Entered fallback");
@@ -27,7 +27,7 @@ pub fn fallback() -> Result<(), Error> {
         index += 1;
     }
 
-    if PausableUDT::is_paused(&lock_hashes)? {
+    if PausableUDT::is_paused(&lock_hashes)?.iter().any(|&b| b) {
         return Err(Error::AbortedFromPause);
     }
 

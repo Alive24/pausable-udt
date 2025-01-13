@@ -1,6 +1,6 @@
 use crate::error::Error;
 use alloc::{ffi::CString, vec::Vec};
-use ckb_ssri_sdk::public_module_traits::udt::UDT_LEN;
+use ckb_ssri_std::public_module_traits::udt::UDT_LEN;
 use ckb_std::{
     ckb_constants::Source,
     ckb_types::bytes::Bytes,

@@ -1,7 +1,7 @@
 use core::str::Utf8Error;
 
-use ckb_ssri_sdk::public_module_traits::udt::{UDTError, UDTPausableError};
-use ckb_ssri_sdk::SSRIError;
+use ckb_ssri_std::public_module_traits::udt::{UDTError, UDTPausableError};
+use ckb_ssri_std::SSRIError;
 use ckb_std::error::SysError;
 use serde_molecule;
 
@@ -29,7 +29,6 @@ pub enum Error {
     InvalidVmVersion,
 
     // * Molecule Error
-    // TODO: Unable to imple From<molecule::Error::VerificationError> for Error perhaps due to versioning.
     MoleculeVerificationError,
 
     // * Serde Molecule Error
@@ -74,6 +73,7 @@ pub enum Error {
     NoBurnPermission,
 
     // * UDT Pausable Error
+    NothingToDo,
     NoPausePermission,
     NoUnpausePermission,
     AbortedFromPause,

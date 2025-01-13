@@ -8,7 +8,7 @@ use reqwest::Client;
 use serde_json::json;
 
 use crate::utils::{get_ssri_response, method_path, method_path_hex};
-use ckb_ssri_sdk::prelude::{decode_u64_vector, encode_u8_32_vector};
+use ckb_ssri_std::prelude::{decode_u64_vector, encode_u8_32_vector};
 
 #[test]
 fn test_method_path() {
