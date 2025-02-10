@@ -21,11 +21,6 @@ pub fn fallback() -> Result<(), Error> {
         index += 1;
     }
 
-    index = 0;
-    while let Ok(lock_hash) = load_cell_lock_hash(index, Source::Output) {
-        lock_hashes.push(lock_hash);
-        index += 1;
-    }
 
     if PausableUDT::is_paused(&lock_hashes)?.iter().any(|&b| b) {
         return Err(Error::AbortedFromPause);
